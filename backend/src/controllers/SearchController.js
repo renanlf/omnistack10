@@ -21,10 +21,16 @@ module.exports = {
         var filter = null;
 
         if(techsArray.length > 0){
+            // converte o array de elementos da busca em expressoes regulares
+            // agora ele busca devs que tenham pelo menos uma das techs
+            // sem levar em consideracao maiuscula/minuscula
+            // ou se a palavra esta completa
+            regexpArrays = techsArray.map(el => new RegExp(el, 'i'))
+
             filter = {
                 location : locationFilter,
                 techs : {
-                    $in: techsArray,
+                    $in: regexpArrays,
                 },
             }
         } else {
