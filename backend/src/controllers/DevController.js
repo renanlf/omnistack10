@@ -15,10 +15,17 @@ module.exports = {
 
         let dev = await Dev.findOne({ github_username });
 
-        if(!dev){
-            const apiResponse = await axios.get(`https://api.github.com/users/${github_username}`);
+        // aqui precisa passar um token criado no github!!
+        const token = '';
 
-            const { name = login, avatar_url, bio } = apiResponse.data; 
+        if(!dev){
+            const apiResponse = await axios.get(`https://api.github.com/users/${github_username}`, {
+                headers : {
+                    'Authorization': `Bearer ${token}`
+                }
+            });
+
+            const { name = login, avatar_url, bio, email } = apiResponse.data; 
 
             const techsArray = parseStringAsArray(techs);
 
@@ -34,6 +41,7 @@ module.exports = {
                 bio,
                 techs : techsArray,
                 location,
+                email,
             });
 
             const connections = findConnections({latitude, longitude}, techsArray);
