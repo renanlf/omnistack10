@@ -7,6 +7,7 @@ Pretendo no futuro atualizar algumas funcionalidades personalizadas afim de fixa
 
 Possíveis Melhorias:
 
+
+- [X] Permitir buscas incompletas. Por exemplo: ao digitar "Reac" procurar por todas as tecnologias que tenham essa string.
 - [ ] Ao abrir o app já mostrar todos os devs na localização mais próxima
 - [ ] Adicionar funcionalidade para enviar e-mail diretamente para o dev que o usuário tenha se interessado
-- [ ] Permitir buscas incompletas. Por exemplo: ao digitar "Reac" procurar por todas as tecnologias que tenham essa string.
