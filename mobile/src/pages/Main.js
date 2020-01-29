@@ -72,6 +72,9 @@ function Main({ navigation }){
         return null;
     }
 
+    // para carregar os devs assim que o app abrir
+    loadDevs();
+
     return (
         <>
             <MapView
